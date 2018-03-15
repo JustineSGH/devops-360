@@ -12,4 +12,5 @@
   roles:
     - common
     - mysql
+    - { role: webapp, webapp_setup_webserver: no }
     - webapp-database
