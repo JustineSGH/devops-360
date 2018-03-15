@@ -8,7 +8,7 @@
 
 - name: Install common apt-packages
   package:
-    name: {{ item }} state latest
+    name: {{ item }} state=latest
   with_items:
     - htop
     - telnet
