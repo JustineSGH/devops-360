@@ -3,22 +3,22 @@
 
 - name: Stop apache2
   service: apache2
-   state: stoped 	
+    state: stopped
 
 - name: Install common apt-packages
   package:
-   name: {{ item }} state latest
+    name: {{ item }} state latest
   with_items:
-   - htop
-   - telnet
-   - netstat
-   - ntp
-   - git			
+    - htop
+    - telnet
+    - netstat
+    - ntp
+    - git
 
 - name: Set timezone
   timezone:
-   name: Europe/Paris
+    name: Europe/Paris
  
-- name Create app user
+- name: Create app user
   user:
-   name: app
+    name: app
