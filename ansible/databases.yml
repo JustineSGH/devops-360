@@ -9,7 +9,6 @@
 - name: Configure databases
   hosts: databases
   become: yes
-
   roles:
-	- mysql
-	- webapp-database
+    - mysql
+    - webapp-database
