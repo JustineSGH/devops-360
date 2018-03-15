@@ -1,2 +1,24 @@
 ---
 # tasks file for mysql
+
+- name: Install MySql
+  apt:
+    name: "{{ item }}"
+  with_items:
+    - mysql-server
+    - python-mysqldb
+
+- name: Password for root user in mysql ?
+  mysql_password: root
+
+- name: Create user
+  mysql_user:
+    name: bob
+    paswword: bob
+    priv: '*.*:ALL,GRANT'
+    state: present
+
+- name: Create database
+  mysql_db:
+    name: data
+    state: present
