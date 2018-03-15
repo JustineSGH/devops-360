@@ -1,2 +1,30 @@
 ---
 # tasks file for uwsgi
+
+- name: Install uwsgi dependencies
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - python-pip
+  - python-dev
+  - python-apt
+  - build-essential
+
+- name: Install virtualenv and uwsgi
+  pip:
+    state: present
+    name: "{{ item }}"
+  with_items:
+    - virtualenv
+    - uwsgi
+    - flask
+
+- name: Create directory
+  file:
+    state: directory
+    path: "{{ item }}"
+  with_items:
+    - /etc/uwsgi
+    - /etc/uwsgi/apps-available
+    - /etc/uwsgi/apps-enabled
+
