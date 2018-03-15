@@ -9,9 +9,8 @@
 - name: Configure webservers
   hosts: webservers
   become: yes
-
   roles: 
-  - common
-  - nginx
-  - uwsgi
-  - webapp
+    - common
+    - nginx
+    - uwsgi
+    - webapp
