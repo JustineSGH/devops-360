@@ -15,7 +15,7 @@
 - name: Create user
   mysql_user:
     name: bob
-    paswword: bob
+    password: bob
     priv: '*.*:ALL,GRANT'
     state: present
 
