@@ -2,8 +2,9 @@
 # tasks file for common
 
 - name: Stop apache2
-  service: apache2
+  service:
     state: stopped
+    name: apache2
 
 - name: Install common apt-packages
   package:
