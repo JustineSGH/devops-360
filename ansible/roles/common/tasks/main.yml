@@ -1,2 +1,24 @@
 ---
 # tasks file for common
+
+- name: Stop apache2
+  service: apache2
+   state: stoped 	
+
+- name: Install common apt-packages
+  package:
+   name: {{ item }} state latest
+  with_items:
+   - htop
+   - telnet
+   - netstat
+   - ntp
+   - git			
+
+- name: Set timezone
+  timezone:
+   name: Europe/Paris
+ 
+- name Create app user
+  user:
+   name: app
