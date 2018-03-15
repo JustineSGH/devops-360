@@ -8,8 +8,8 @@
     - mysql-server
     - python-mysqldb
 
-- name: Password for root user in mysql ?
-  mysql_password: root
+#- name: Password for root user in mysql ?
+#  mysql_password: root
 
 - name: Create user
   mysql_user:
