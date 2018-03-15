@@ -10,5 +10,6 @@
   hosts: databases
   become: yes
   roles:
+    - common
     - mysql
     - webapp-database

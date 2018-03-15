@@ -11,3 +11,4 @@
   mysql_db:
     name: data
     state: present
+    state: present
